@@ -17,5 +17,8 @@
   "scripts": {
     "start": "phenomic start",
     "build": "phenomic build"
+  },
+  "dependencies": {
+    "react-columns": "^1.1.0"
   }
 }
