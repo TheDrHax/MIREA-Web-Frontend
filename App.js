@@ -2,11 +2,13 @@ import React from "react";
 import { Router, Route, browserHistory } from "react-router";
 import { createApp, renderApp } from "@phenomic/preset-react-app/lib/client";
 
-import { Home } from "./modules/Home";
+import { Page } from "./modules/Page";
+
+import "./styles.css";
 
 const routes = () => (
   <Router history={browserHistory}>
-    <Route path="/" component={Home} />
+    <Route path="/" component={Page} />
   </Router>
 );
 
