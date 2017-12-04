@@ -5,7 +5,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 class Page extends React.Component {
   state = {
-    drawer: false
+    drawer: true
   };
 
   toggleDrawer = () => this.setState({drawer: !this.state.drawer});
@@ -14,13 +14,30 @@ class Page extends React.Component {
     return (
       <MuiThemeProvider>
         <div>
-          <Drawer
-            open={this.state.drawer}
-            containerStyle={{height: 'calc(100% - 64px)', top: 64}} />
+
           <AppBar
             title={this.props.title}
+            style={{position: 'fixed'}}
             onLeftIconButtonTouchTap={this.toggleDrawer} />
-          {this.props.children}
+
+          <Drawer
+            open={this.state.drawer}
+            containerStyle={{
+              height: 'calc(100% - 64px)',
+              top: 64
+            }} />
+
+          <div
+            style={{
+              position: 'absolute',
+              top: 64,
+              marginLeft: this.state.drawer ? 256 : 0
+            }}>
+
+            {this.props.children}
+
+          </div>
+
         </div>
       </MuiThemeProvider>
     );
