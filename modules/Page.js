@@ -18,8 +18,9 @@ class Page extends React.Component {
             open={this.state.drawer}
             containerStyle={{height: 'calc(100% - 64px)', top: 64}} />
           <AppBar
-            title="Such AppBar, Wow"
+            title={this.props.title}
             onLeftIconButtonTouchTap={this.toggleDrawer} />
+          {this.props.children}
         </div>
       </MuiThemeProvider>
     );
