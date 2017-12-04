@@ -1,9 +1,9 @@
 import React from "react";
 
-import {AppBar, Drawer} from 'material-ui';
+import {AppBar, Drawer, MenuItem} from 'material-ui';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-class Page extends React.Component {
+export default class Page extends React.Component {
   state = {
     drawer: true
   };
@@ -25,7 +25,12 @@ class Page extends React.Component {
             containerStyle={{
               height: 'calc(100% - 64px)',
               top: 64
-            }} />
+            }}>
+
+            <MenuItem href="/">Главная страница</MenuItem>
+            <MenuItem href="/doge">Doge</MenuItem>
+
+          </Drawer>
 
           <div
             style={{
@@ -43,5 +48,3 @@ class Page extends React.Component {
     );
   }
 }
-
-export { Page };
