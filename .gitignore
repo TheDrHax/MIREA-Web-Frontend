@@ -1,1 +1,4 @@
 node_modules/
+.cache
+public/index.html
+public/render-page.js.map

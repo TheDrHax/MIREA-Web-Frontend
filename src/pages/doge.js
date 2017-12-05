@@ -5,7 +5,7 @@ import {
   Card, CardHeader, CardMedia, CardTitle
 } from 'material-ui/Card';
 
-import Page from './Page';
+import Page from '../components/Page';
 
 const CardA = (
   <Card style={{margin: 16}}>

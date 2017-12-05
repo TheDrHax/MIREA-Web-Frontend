@@ -1,4 +1,5 @@
 import React from "react";
+import {Helmet} from "react-helmet";
 
 import {AppBar, Drawer, MenuItem} from 'material-ui';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -14,6 +15,11 @@ export default class Page extends React.Component {
     return (
       <MuiThemeProvider>
         <div>
+          <Helmet>
+            <meta charSet="utf-8" />
+            <title>{this.props.title}</title>
+            <link rel="stylesheet" href="static/styles.css" />
+          </Helmet>
 
           <AppBar
             title={this.props.title}
