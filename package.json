@@ -9,13 +9,30 @@
   "scripts": {
     "develop": "gatsby develop --host 0.0.0.0 --port 8000",
     "build": "gatsby build",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "deploy": "github-pages"
   },
   "dependencies": {
     "gatsby": "^1.9.128",
     "gatsby-link": "^1.6.30",
     "gatsby-plugin-react-helmet": "^2.0.2",
+    "github-pages": "^3.0.2",
     "react-columns": "^1.1.0",
     "react-helmet": "^5.2.0"
+  },
+  "github-pages": {
+    "remote": {
+      "user": "TheDrHax",
+      "repo": "MIREA-Web-Frontend",
+      "ref": "heads/gh-pages"
+    },
+    "commit": {
+      "message": "Deploy via github-pages",
+      "author": {
+        "name": "Dmitry Karikh",
+        "email": "the.dr.hax@gmail.com"
+      }
+    },
+    "src": "./public"
   }
 }
