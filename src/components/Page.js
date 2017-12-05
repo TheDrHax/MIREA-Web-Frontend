@@ -1,6 +1,8 @@
 import React from "react";
 import {Helmet} from "react-helmet";
 
+import {navigateTo} from "gatsby-link";
+
 import {AppBar, Drawer, MenuItem} from 'material-ui';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
@@ -33,8 +35,12 @@ export default class Page extends React.Component {
               top: 64
             }}>
 
-            <MenuItem href="/">Главная страница</MenuItem>
-            <MenuItem href="/doge">Doge</MenuItem>
+            <MenuItem onClick={ () => navigateTo('/')}>
+              Главная страница
+            </MenuItem>
+            <MenuItem onClick={ () => navigateTo('/doge')}>
+              Doge
+            </MenuItem>
 
           </Drawer>
 
