@@ -30,10 +30,7 @@ export default class Page extends React.Component {
 
           <Drawer
             open={this.state.drawer}
-            containerStyle={{
-              height: 'calc(100% - 64px)',
-              top: 64
-            }}>
+            containerStyle={{marginTop: 64}}>
 
             <MenuItem onClick={ () => navigateTo('/')}>
               Главная страница
