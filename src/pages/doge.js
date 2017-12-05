@@ -1,5 +1,7 @@
 import React from "react";
 
+import {withPrefix} from "gatsby-link";
+
 import Columns from 'react-columns';
 import {
   Card, CardHeader, CardMedia, CardTitle
@@ -12,10 +14,10 @@ const CardA = (
     <CardHeader
       title="Doge"
       subtitle="App maintainer"
-      avatar="images/doge_avatar.jpg"
+      avatar={withPrefix("/images/doge_avatar.jpg")}
     />
     <CardMedia>
-      <img src="images/doge.jpg" alt="" />
+      <img src={withPrefix("/images/doge.jpg")} />
     </CardMedia>
     <CardTitle title="Wow" subtitle="Such design" />
   </Card>
@@ -26,11 +28,13 @@ const CardB = (
     <CardHeader
       title="Doge"
       subtitle="App maintainer"
-      avatar="images/doge_avatar.jpg"
+      avatar={withPrefix("/images/doge_avatar.jpg")}
     />
     <CardMedia
       overlay={<CardTitle title="Big overlay" subtitle="Woah" />}>
-      <img src="images/doge.jpg" style={{transform: 'scale(-1, 1)'}} />
+      <img
+        src={withPrefix("/images/doge.jpg")}
+        style={{transform: 'scale(-1, 1)'}} />
     </CardMedia>
   </Card>
 )

@@ -1,7 +1,7 @@
 import React from "react";
 import {Helmet} from "react-helmet";
 
-import {navigateTo} from "gatsby-link";
+import {navigateTo, withPrefix} from "gatsby-link";
 
 import {AppBar, Drawer, MenuItem} from 'material-ui';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -20,7 +20,7 @@ export default class Page extends React.Component {
           <Helmet>
             <meta charSet="utf-8" />
             <title>{this.props.title}</title>
-            <link rel="stylesheet" href="static/styles.css" />
+            <link rel="stylesheet" href={withPrefix("/static/styles.css")} />
           </Helmet>
 
           <AppBar
