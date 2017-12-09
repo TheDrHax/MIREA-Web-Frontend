@@ -17,6 +17,7 @@
     "gatsby-link": "^1.6.30",
     "gatsby-plugin-react-helmet": "^2.0.2",
     "github-pages": "^3.0.2",
+    "node-fetch": "^1.7.3",
     "react-columns": "^1.1.0",
     "react-helmet": "^5.2.0"
   },
