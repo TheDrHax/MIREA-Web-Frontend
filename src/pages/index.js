@@ -34,6 +34,7 @@ class Branch extends React.Component {
 		      <FlatButton
 						icon={<FileFileDownload />}
 						label="Скачать .APK"
+						target="_blank"
 						href={this.props.data.url}
 					/>
 
@@ -41,10 +42,12 @@ class Branch extends React.Component {
 						this.props.data.by_build == "1" ?
 							<FlatButton
 								label="Исходный код"
+								target="_blank"
 								href={"https://github.com/mosmetro-android/mosmetro-android/tree/" + this.props.data.name}
 						  /> :
 							<FlatButton
 								label="Страница релиза"
+								target="_blank"
 								href={"https://github.com/mosmetro-android/mosmetro-android/releases/tag/" + this.props.data.version}
 							/>
 					}
