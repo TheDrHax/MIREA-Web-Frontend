@@ -2,7 +2,9 @@ import React from "react";
 import fetch from "node-fetch";
 import {withPrefix} from "gatsby-link";
 
-import {Card, CardHeader} from 'material-ui/Card';
+import {FlatButton} from 'material-ui';
+import {Card, CardHeader, CardText, CardActions} from 'material-ui/Card';
+import FileFileDownload from 'material-ui/svg-icons/file/file-download';
 
 import Page from '../components/Page';
 
@@ -10,6 +12,7 @@ class Branch extends React.Component {
 	render() {
 		return (
 			<Card style={{margin: 16}}>
+
 				<CardHeader
 					title={this.props.data.name}
 					subtitle={
@@ -20,7 +23,34 @@ class Branch extends React.Component {
 				 	avatar={withPrefix(
 						this.props.data.by_build == "1" ?
 							"/images/jenkins.png" : "/images/github.png"
-					)} />
+					)}>
+				</CardHeader>
+
+				<CardText style={{whiteSpace: 'pre'}}>
+					{this.props.data.message}
+    		</CardText>
+
+				<CardActions>
+		      <FlatButton
+						icon={<FileFileDownload />}
+						label="Скачать .APK"
+						href={this.props.data.url}
+					/>
+
+					{
+						this.props.data.by_build == "1" ?
+							<FlatButton
+								label="Исходный код"
+								href={"https://github.com/mosmetro-android/mosmetro-android/tree/" + this.props.data.name}
+						  /> :
+							<FlatButton
+								label="Страница релиза"
+								href={"https://github.com/mosmetro-android/mosmetro-android/releases/tag/" + this.props.data.version}
+							/>
+					}
+
+		    </CardActions>
+
 			</Card>
 		)
 	}
