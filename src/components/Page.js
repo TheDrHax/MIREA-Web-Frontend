@@ -3,12 +3,13 @@ import {Helmet} from "react-helmet";
 
 import {navigateTo, withPrefix} from "gatsby-link";
 
-import {AppBar, Drawer, MenuItem} from 'material-ui';
+import {AppBar, Drawer, MenuItem, IconButton} from 'material-ui';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import NavigationClose from 'material-ui/svg-icons/navigation/close';
 
 export default class Page extends React.Component {
   state = {
-    drawer: true
+    drawer: false
   };
 
   toggleDrawer = () => this.setState({drawer: !this.state.drawer});
@@ -28,16 +29,22 @@ export default class Page extends React.Component {
             style={{position: 'fixed'}}
             onLeftIconButtonTouchTap={this.toggleDrawer} />
 
-          <Drawer
-            open={this.state.drawer}
-            containerStyle={{marginTop: 64}}>
+          <Drawer open={this.state.drawer}>
 
-            <MenuItem onClick={ () => navigateTo('/')}>
-              Главная страница
-            </MenuItem>
-            <MenuItem onClick={ () => navigateTo('/doge')}>
-              Doge
-            </MenuItem>
+            <AppBar
+              title="Меню"
+              style={{position: 'fixed'}}
+              iconElementLeft={<IconButton><NavigationClose /></IconButton>}
+              onLeftIconButtonTouchTap={this.toggleDrawer} />
+
+            <div style={{paddingTop: 64}}>
+              <MenuItem onClick={ () => navigateTo('/')}>
+                Главная страница
+              </MenuItem>
+              <MenuItem onClick={ () => navigateTo('/doge')}>
+                Doge
+              </MenuItem>
+            </div>
 
           </Drawer>
 
